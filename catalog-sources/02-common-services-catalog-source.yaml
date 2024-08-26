@@ -2,7 +2,8 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: CatalogSource
 metadata:
   name: opencloud-operators
-  namespace: openshift-marketplace
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   displayName: ibm-cp-common-services-4.6.4
   publisher: IBM
