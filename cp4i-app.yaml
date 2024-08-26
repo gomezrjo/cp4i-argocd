@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cp4i
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: 'cp4i-resources'
+    repoURL: 'https://github.com/gomezrjo/cp4i-argocd'
+    targetRevision: main
+  project: 'default' 
+  syncPolicy:
+    automated:
+      prune: true
