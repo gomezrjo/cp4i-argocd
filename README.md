@@ -50,7 +50,8 @@ B) Set a default storage class for your cluster:
 1. If you have provisioned your OCP cluster in Tech Zone you can use the following script to set the proper default storage class:
    ```
    scripts/99-odf-tkz-set-scs.sh
-
+   ```
+   
 c) Create and configure namespaces:
 
 1. Create namespace for Common Services:
