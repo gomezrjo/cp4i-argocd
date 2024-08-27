@@ -1,0 +1,12 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-integration-asset-repository
+  namespace: openshift-operators
+  annotations:
+    argocd.argoproj.io/sync-wave: "9"
+spec:
+  channel: v1.7-sc2
+  name: ibm-integration-asset-repository
+  source: ibm-integration-asset-repository-catalog
+  sourceNamespace: openshift-marketplace
