@@ -51,7 +51,7 @@ B) Set a default storage class for your cluster:
    ```
    scripts/99-odf-tkz-set-scs.sh
 
-c) Create namespaces:
+c) Create and configure namespaces:
 
 1. Create namespace for Common Services:
    ```
@@ -61,4 +61,23 @@ c) Create namespaces:
 2. Create namespace for CP4I:
    ```
    oc new-project tools
+   ```
+
+3. Grant access to ArgoCD to CP4I ns:
+   ```
+   oc adm policy add-role-to-user admin system:serviceaccount:openshift-gitops:openshift-gitops-argocd-application-controller -n tools 
+   ```
+
+4. Set your entitlement key:
+   ```
+   export ENT_KEY=<my-key>
+   ```
+
+5. Create secret with entitlement key:
+   ```
+   oc create secret docker-registry ibm-entitlement-key \
+        --docker-username=cp \
+        --docker-password=$ENT_KEY \
+        --docker-server=cp.icr.io \
+        --namespace=tools
    ```
