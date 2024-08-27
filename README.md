@@ -1,6 +1,6 @@
 # cp4i-argocd
 
-Install ArgoCD:
+A) Install ArgoCD:
 
 1. Create and configure the namespace:
    ```
@@ -45,3 +45,8 @@ Install ArgoCD:
    scripts/00c-argocd-access-info.sh
    ```
 
+B) Set a default storage class for your cluster:
+
+1. If you have provisioned your OCP cluster in Tech Zone you can use the following script to set the proper default storage class:
+   ```
+   scripts/99-odf-tkz-set-scs.sh
