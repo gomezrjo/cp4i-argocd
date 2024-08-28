@@ -2,7 +2,6 @@ apiVersion: apiconnect.ibm.com/v1beta1
 kind: APIConnectCluster
 metadata:
   annotations:
-    apiconnect-operator/backups-not-configured: 'true'
     argocd.argoproj.io/sync-wave: "15"
   labels:
     backup.apiconnect.ibm.com/component: apiconnectcluster
