@@ -4,7 +4,7 @@ metadata:
   name: ibm-eventstreams-catalog
   namespace: openshift-marketplace
   annotations:
-    argocd.argoproj.io/sync-wave: "15"
+    argocd.argoproj.io/sync-wave: "16"
 spec:
   displayName: ibm-eventstreams-3.4.0
   publisher: IBM
